@@ -3,76 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="PASTOR">
 <title>PASTOR</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --black:#0A0A0A;--white:#FFFFFF;
-  --lime:#C8FF00;--lime-dim:#D4FF33;--lime-dark:#8FAD00;
-  --green:#1A6B3C;--green-mid:#2D9B57;
-  --gray-950:#0F0F0F;--gray-900:#141414;--gray-800:#1C1C1C;
-  --gray-700:#2A2A2A;--gray-600:#3D3D3D;--gray-500:#5A5A5A;
-  --gray-400:#7A7A7A;--gray-300:#A0A0A0;--gray-200:#C8C8C8;--gray-100:#F0F0F0;
-  --red:#FF4444;--red-dim:#2A1010;
-  --blue:#4488FF;--blue-dim:#0F1A2A;
-  --yellow:#FFD60A;--yellow-dim:#1A1500;
-  --radius:12px;--radius-sm:8px;--radius-lg:18px;--radius-pill:999px;
-  --tab-h:62px;
+  --lime:#C8FF00;--lime-dim:rgba(200,255,0,.12);
+  --green:#2D9B57;--green-dim:rgba(45,155,87,.15);
+  --gray-900:#141414;--gray-800:#1C1C1C;--gray-700:#2A2A2A;
+  --gray-600:#3D3D3D;--gray-500:#5A5A5A;--gray-400:#7A7A7A;
+  --gray-300:#A0A0A0;--gray-200:#C8C8C8;
+  --red:#FF4444;--red-dim:rgba(255,68,68,.12);
+  --yellow:#FFD60A;--yellow-dim:rgba(255,214,10,.12);
+  --blue:#4488FF;--blue-dim:rgba(68,136,255,.12);
+  --purple:#A78BFA;--purple-dim:rgba(167,139,250,.12);
+  --tab-h:62px;--radius:12px;--radius-sm:8px;--radius-pill:999px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{background:var(--black)}
-body{background:var(--black);color:var(--white);font-family:'Space Grotesk',sans-serif;min-height:100vh;padding-bottom:calc(var(--tab-h)+12px)}
-
-/* NAV */
+html,body{background:var(--black);color:var(--white);font-family:'Space Grotesk',sans-serif;min-height:100vh}
+body{padding-bottom:calc(var(--tab-h)+12px)}
 .nav{position:fixed;bottom:0;left:0;right:0;height:var(--tab-h);background:var(--gray-900);border-top:1px solid var(--gray-700);display:flex;z-index:200;padding:0 8px}
 .nb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;border:none;background:transparent;color:var(--gray-400);padding:6px 2px;border-radius:var(--radius-sm);margin:5px 3px;transition:all .2s;font-family:'Space Grotesk',sans-serif}
-.nb.act{color:var(--lime);background:rgba(200,255,0,.08)}
+.nb.act{color:var(--lime);background:var(--lime-dim)}
 .nb .ni{font-size:1.2rem;line-height:1}
 .nb .nl{font-size:.48rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-
-/* PAGES */
 .page{display:none;padding:20px 16px 16px;max-width:560px;margin:0 auto}
 .page.act{display:block}
-
-/* HERO HEADER */
-.pg-hdr{margin-bottom:20px}
-.pg-eyebrow{font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:4px}
-.pg-title{font-size:1.9rem;font-weight:700;color:var(--white);letter-spacing:-1px;line-height:1.1}
-.pg-sub{font-size:.75rem;color:var(--gray-400);margin-top:5px;font-weight:400;line-height:1.5}
-
-/* CARDS */
-.card{background:var(--gray-800);border:1px solid var(--gray-700);border-radius:var(--radius-lg);padding:16px;margin-bottom:10px}
+.pg-eyebrow{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:4px}
+.pg-title{font-size:1.8rem;font-weight:700;color:var(--white);letter-spacing:-1px;line-height:1.1;margin-bottom:4px}
+.pg-sub{font-size:.72rem;color:var(--gray-400);margin-bottom:18px;line-height:1.5}
+.card{background:var(--gray-800);border:1px solid var(--gray-700);border-radius:14px;padding:16px;margin-bottom:10px}
 .card-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .card-title{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-400)}
-
-/* PILL TABS */
-.pill-tabs{display:flex;gap:6px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-.pill-tab{flex-shrink:0;padding:7px 15px;border-radius:var(--radius-pill);border:1px solid var(--gray-700);background:var(--gray-800);color:var(--gray-300);font-size:.7rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Space Grotesk',sans-serif}
+.pill-tabs{display:flex;gap:5px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.pill-tab{flex-shrink:0;padding:7px 14px;border-radius:var(--radius-pill);border:1px solid var(--gray-700);background:var(--gray-800);color:var(--gray-300);font-size:.68rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Space Grotesk',sans-serif}
 .pill-tab.act{background:var(--lime);border-color:var(--lime);color:var(--black)}
-.pill-tab.done2{border-color:var(--green-mid);color:var(--green-mid);background:rgba(45,155,87,.12)}
-
-/* STATS */
 .stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
 .stat-card{background:var(--gray-700);border-radius:var(--radius-sm);padding:12px 8px;text-align:center}
-.stat-val{font-size:1.5rem;font-weight:700;line-height:1;letter-spacing:-1px}
+.stat-val{font-size:1.45rem;font-weight:700;line-height:1;letter-spacing:-1px}
 .stat-lbl{font-size:.5rem;color:var(--gray-400);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:3px}
-
-/* PROGRESS */
 .pbar-wrap{background:var(--gray-700);height:6px;border-radius:99px;overflow:hidden;margin:8px 0 4px}
-.pbar{height:100%;border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.pbar{height:100%;border-radius:99px;transition:width .5s}
 .pbar-row{display:flex;justify-content:space-between;font-size:.6rem;color:var(--gray-400);font-weight:500}
-
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border-radius:var(--radius-pill);border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;transition:all .15s;letter-spacing:-.2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border-radius:var(--radius-pill);border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;transition:all .15s}
 .btn-lime{background:var(--lime);color:var(--black)}
-.btn-lime:active{background:var(--lime-dark);color:var(--black)}
+.btn-lime:active{opacity:.85}
 .btn-ghost{background:transparent;border:1px solid var(--gray-600);color:var(--gray-300)}
 .btn-ghost:active{background:var(--gray-700)}
-.btn-green{background:var(--green-mid);color:var(--white)}
+.btn-green{background:var(--green);color:var(--white)}
 .btn-full{width:100%}
 .btn-sm{padding:8px 14px;font-size:.72rem}
-
-/* INPUTS */
 .inp{width:100%;background:var(--gray-700);border:1px solid var(--gray-600);border-radius:var(--radius-sm);padding:11px 13px;color:var(--white);font-size:.85rem;font-family:'Space Grotesk',sans-serif;outline:none;transition:border-color .2s;font-weight:500}
 .inp:focus{border-color:var(--lime)}
 .inp::placeholder{color:var(--gray-500)}
@@ -80,105 +63,87 @@ textarea.inp{resize:none;min-height:72px;line-height:1.5}
 select.inp{cursor:pointer}
 select.inp option{background:var(--gray-800)}
 .inp-group{margin-bottom:10px}
-.inp-group label{display:block;font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-400);margin-bottom:5px}
-
-/* CHIPS */
+.inp-group label{display:block;font-size:.57rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-400);margin-bottom:5px}
 .chip{display:inline-flex;align-items:center;font-size:.6rem;font-weight:600;padding:3px 9px;border-radius:var(--radius-pill)}
-.chip-lime{background:rgba(200,255,0,.15);color:var(--lime)}
-.chip-green{background:rgba(45,155,87,.2);color:#4ADE80}
-.chip-red{background:rgba(255,68,68,.15);color:#FF8888}
-.chip-blue{background:rgba(68,136,255,.15);color:#88BBFF}
-.chip-yellow{background:rgba(255,214,10,.15);color:#FFD60A}
+.chip-lime{background:var(--lime-dim);color:var(--lime)}
+.chip-green{background:var(--green-dim);color:#4ADE80}
+.chip-red{background:var(--red-dim);color:#FF8888}
+.chip-blue{background:var(--blue-dim);color:#88BBFF}
+.chip-yellow{background:var(--yellow-dim);color:var(--yellow)}
 .chip-gray{background:var(--gray-700);color:var(--gray-300)}
-
-/* EXERCISE */
+.chip-purple{background:var(--purple-dim);color:var(--purple)}
 .ex-card{background:var(--gray-800);border:1px solid var(--gray-700);border-radius:var(--radius);margin-bottom:7px;overflow:hidden;cursor:pointer;transition:all .15s}
-.ex-card:active{transform:scale(.99);background:var(--gray-700)}
-.ex-card.done{opacity:.45;border-color:var(--green-mid)}
+.ex-card:active{transform:scale(.99)}
+.ex-card.done{opacity:.4;border-color:var(--green)}
 .ex-card.done .ex-name{text-decoration:line-through;color:var(--gray-500)}
 .ex-main{display:flex;align-items:center;padding:12px 14px;gap:11px}
 .ex-chk{width:22px;height:22px;border-radius:50%;border:2px solid var(--gray-600);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:transparent;transition:all .2s}
-.ex-card.done .ex-chk{background:var(--green-mid);border-color:var(--green-mid);color:#fff}
+.ex-card.done .ex-chk{background:var(--green);border-color:var(--green);color:#fff}
 .ex-info{flex:1}
 .ex-name{font-size:.85rem;font-weight:600;color:var(--white);margin-bottom:3px}
 .ex-detail{display:flex;gap:5px;flex-wrap:wrap}
 .ex-note{padding:0 14px 10px 47px;font-size:.62rem;color:var(--gray-400);line-height:1.4}
-
-/* SUPERSET */
 .ss-card{background:var(--gray-800);border:1px solid var(--gray-700);border-radius:var(--radius);margin-bottom:7px;overflow:hidden}
-.ss-card.done{opacity:.45;border-color:var(--green-mid)}
-.ss-hdr{display:flex;align-items:center;padding:11px 13px;gap:10px;border-bottom:1px solid var(--gray-700);cursor:pointer;transition:background .15s}
+.ss-card.done{opacity:.4;border-color:var(--green)}
+.ss-hdr{display:flex;align-items:center;padding:10px 13px;gap:10px;border-bottom:1px solid var(--gray-700);cursor:pointer;transition:background .15s}
 .ss-hdr:active{background:var(--gray-700)}
-.ss-letter{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;flex-shrink:0}
+.ss-letter{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0}
 .ss-inf{flex:1}
 .ss-nm{font-size:.72rem;font-weight:600;color:var(--white);line-height:1.3}
-.ss-mt{font-size:.58rem;color:var(--gray-400);margin-top:1px}
+.ss-mt{font-size:.57rem;color:var(--gray-400);margin-top:1px}
 .ss-chk{width:20px;height:20px;border-radius:50%;border:2px solid var(--gray-600);display:flex;align-items:center;justify-content:center;font-size:.58rem;color:transparent;transition:all .2s;flex-shrink:0}
-.ss-card.done .ss-chk{background:var(--green-mid);border-color:var(--green-mid);color:#fff}
+.ss-card.done .ss-chk{background:var(--green);border-color:var(--green);color:#fff}
 .ss-body{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-700)}
-.ss-ex{background:var(--gray-800);padding:11px 12px}
+.ss-ex{background:var(--gray-800);padding:10px 12px}
 .ss-ex-lbl{font-size:.5rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);margin-bottom:3px}
-.ss-ex-nm{font-size:.76rem;font-weight:600;color:var(--white);margin-bottom:5px;line-height:1.2;min-height:32px}
+.ss-ex-nm{font-size:.75rem;font-weight:600;color:var(--white);margin-bottom:5px;line-height:1.2;min-height:30px}
 .ss-ex-tags{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:3px}
 .ss-ex-note{font-size:.58rem;color:var(--gray-400);font-style:italic;line-height:1.3}
 .ss-rest{padding:7px 13px;background:var(--gray-900);font-size:.6rem;color:var(--gray-400);font-weight:500}
 .ss-rest strong{color:var(--lime)}
-
-/* FOOD */
-.meal-hdr{font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-400);margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.meal-hdr{font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-400);margin-bottom:7px;display:flex;align-items:center;gap:8px}
 .meal-hdr::after{content:'';flex:1;height:1px;background:var(--gray-700)}
 .food-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--gray-700)}
 .food-item:last-child{border-bottom:none}
 .fi-name{font-size:.82rem;font-weight:600;color:var(--white)}
 .fi-macros{font-size:.6rem;color:var(--gray-400);margin-top:2px}
 .fi-cal{font-size:1.1rem;font-weight:700;color:var(--lime);letter-spacing:-1px}
-
-/* SEMAPHORE */
-.sem{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:var(--radius-sm);margin-bottom:12px;font-size:.75rem;font-weight:600;border:1px solid}
-.sem-green{background:rgba(45,155,87,.12);border-color:rgba(45,155,87,.3);color:#4ADE80}
-.sem-yellow{background:rgba(255,214,10,.1);border-color:rgba(255,214,10,.3);color:var(--yellow)}
-.sem-red{background:rgba(255,68,68,.1);border-color:rgba(255,68,68,.3);color:#FF8888}
+.sem{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:var(--radius-sm);margin-bottom:12px;font-size:.73rem;font-weight:600;border:1px solid}
+.sem-green{background:var(--green-dim);border-color:rgba(45,155,87,.3);color:#4ADE80}
+.sem-yellow{background:var(--yellow-dim);border-color:rgba(255,214,10,.3);color:var(--yellow)}
+.sem-red{background:var(--red-dim);border-color:rgba(255,68,68,.3);color:#FF8888}
 .sem-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-
-/* CIG */
 .cig-big{font-size:5rem;font-weight:700;letter-spacing:-4px;line-height:1;color:var(--lime)}
-.cig-ctrl-btn{width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;font-size:1.5rem;font-weight:700;transition:all .15s;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif}
+.cig-btn{width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;font-size:1.5rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;transition:all .15s}
 .cig-add{background:var(--lime);color:var(--black)}
-.cig-add:active{background:var(--lime-dark)}
+.cig-add:active{opacity:.8}
 .cig-sub{background:var(--gray-700);color:var(--white);border:1px solid var(--gray-600)}
 .bar-chart{display:flex;gap:5px;align-items:flex-end}
 .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
 .bar-fill{width:100%;border-radius:4px 4px 0 0;min-height:3px;transition:height .3s}
 .bar-lbl{font-size:.5rem;color:var(--gray-500);font-weight:600}
 .bar-val{font-size:.58rem;font-weight:700}
-
-/* MODAL */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:300;display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:300;display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px)}
 .overlay.open{display:flex}
-.modal{background:var(--gray-900);border:1px solid var(--gray-700);border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding:20px 16px 36px;width:100%;max-width:560px;max-height:88vh;overflow-y:auto}
+.modal{background:var(--gray-900);border:1px solid var(--gray-700);border-radius:18px 18px 0 0;padding:20px 16px 36px;width:100%;max-width:560px;max-height:88vh;overflow-y:auto}
 .modal-handle{width:36px;height:4px;background:var(--gray-600);border-radius:99px;margin:0 auto 16px}
-.modal-title{font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:-.5px;margin-bottom:14px}
-
-/* NOTE */
+.modal-title{font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:-.5px;margin-bottom:14px}
 .note{border-radius:var(--radius-sm);padding:10px 13px;margin-bottom:10px;display:flex;gap:8px;font-size:.7rem;line-height:1.5;font-weight:500;border:1px solid}
-.note-lime{background:rgba(200,255,0,.08);border-color:rgba(200,255,0,.2);color:var(--lime)}
-.note-yellow{background:rgba(255,214,10,.08);border-color:rgba(255,214,10,.2);color:var(--yellow)}
-.note-green{background:rgba(45,155,87,.1);border-color:rgba(45,155,87,.25);color:#4ADE80}
-.note-blue{background:rgba(68,136,255,.1);border-color:rgba(68,136,255,.25);color:#88BBFF}
+.note-lime{background:var(--lime-dim);border-color:rgba(200,255,0,.2);color:var(--lime)}
+.note-yellow{background:var(--yellow-dim);border-color:rgba(255,214,10,.2);color:var(--yellow)}
+.note-green{background:var(--green-dim);border-color:rgba(45,155,87,.25);color:#4ADE80}
+.note-blue{background:var(--blue-dim);border-color:rgba(68,136,255,.25);color:#88BBFF}
 .note-icon{font-size:.9rem;flex-shrink:0;margin-top:2px}
-
-/* DIVIDER */
-.div{height:1px;background:var(--gray-700);margin:12px 0}
-
-/* SECTION LABEL */
-.sec-lbl{font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);margin:16px 0 8px;display:flex;align-items:center;gap:8px}
+.sec-lbl{font-size:.57rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-500);margin:16px 0 8px;display:flex;align-items:center;gap:8px}
 .sec-lbl::after{content:'';flex:1;height:1px;background:var(--gray-700)}
-
-/* INFO ROW */
 .info-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--gray-700)}
 .info-row:last-child{border-bottom:none}
 .info-lbl{font-size:.75rem;color:var(--gray-300);font-weight:500}
 .info-val{font-size:.82rem;font-weight:700;color:var(--white)}
+.week-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:var(--radius-pill);background:var(--lime-dim);color:var(--lime);font-size:.6rem;font-weight:700;letter-spacing:.5px;margin-bottom:14px}
+.sync-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);display:inline-block;margin-left:4px}
+.sync-dot.err{background:var(--red)}
+.sync-dot.loading{background:var(--yellow)}
 </style>
 </head>
 <body>
@@ -192,12 +157,11 @@ select.inp option{background:var(--gray-800)}
 
 <!-- GYM -->
 <div class="page act" id="page-gym">
-  <div class="pg-hdr">
-    <div class="pg-eyebrow">Entrenamiento</div>
-    <div class="pg-title" id="gym-title">Buen día, Pastor 👊</div>
-    <div class="pg-sub" id="gym-sub"></div>
-  </div>
-  <div class="pill-tabs" id="gym-tabs">
+  <div class="pg-eyebrow">Entrenamiento</div>
+  <div class="pg-title" id="gym-title">Buen día, Pastor 👊</div>
+  <div class="pg-sub" id="gym-sub"></div>
+  <div id="gym-week-badge"></div>
+  <div class="pill-tabs">
     <button class="pill-tab act" data-day="lun" onclick="switchDay('lun',this)">Lunes</button>
     <button class="pill-tab" data-day="mar" onclick="switchDay('mar',this)">Martes</button>
     <button class="pill-tab" data-day="mie" onclick="switchDay('mie',this)">Miércoles</button>
@@ -207,7 +171,7 @@ select.inp option{background:var(--gray-800)}
   </div>
   <div id="gym-content"></div>
   <div class="card" style="margin-top:6px">
-    <div class="card-hdr"><div class="card-title">Registrar sesión</div></div>
+    <div class="card-hdr"><div class="card-title">Registrar sesión</div><span class="sync-dot" id="sync-gym" title="Sincronizando..."></span></div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
       <div class="inp-group" style="margin:0"><label>FC ppm</label><input class="inp" type="number" id="l-fc" placeholder="118"></div>
       <div class="inp-group" style="margin:0"><label>Calorías</label><input class="inp" type="number" id="l-cal" placeholder="240"></div>
@@ -220,17 +184,15 @@ select.inp option{background:var(--gray-800)}
 
 <!-- FOOD -->
 <div class="page" id="page-food">
-  <div class="pg-hdr">
-    <div class="pg-eyebrow">Nutrición</div>
-    <div class="pg-title">Comidas de hoy</div>
-    <div class="pg-sub" id="food-date"></div>
-  </div>
+  <div class="pg-eyebrow">Nutrición</div>
+  <div class="pg-title">Comidas de hoy</div>
+  <div class="pg-sub" id="food-date"></div>
   <div class="card">
     <div class="card-hdr"><div class="card-title">Resumen calórico</div><span class="chip chip-lime" id="food-pct">0%</span></div>
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-val" id="f-cal" style="color:var(--lime)">0</div><div class="stat-lbl">kcal</div></div>
       <div class="stat-card"><div class="stat-val" id="f-prot" style="color:#4ADE80">0g</div><div class="stat-lbl">proteína</div></div>
-      <div class="stat-card"><div class="stat-val" id="f-carb" style="color:#FFD60A">0g</div><div class="stat-lbl">carbos</div></div>
+      <div class="stat-card"><div class="stat-val" id="f-carb" style="color:var(--yellow)">0g</div><div class="stat-lbl">carbos</div></div>
     </div>
     <div class="pbar-wrap"><div class="pbar" id="f-pbar" style="background:var(--lime);width:0%"></div></div>
     <div class="pbar-row"><span id="f-pbar-txt">0 / 2300 kcal</span><span id="f-deficit" style="color:#4ADE80;font-weight:600"></span></div>
@@ -242,13 +204,11 @@ select.inp option{background:var(--gray-800)}
 
 <!-- CIGS -->
 <div class="page" id="page-cigs">
-  <div class="pg-hdr">
-    <div class="pg-eyebrow">Hábitos</div>
-    <div class="pg-title">Cigarrillos</div>
-    <div class="pg-sub">Controlá tu consumo diario y mensual</div>
-  </div>
+  <div class="pg-eyebrow">Hábitos</div>
+  <div class="pg-title">Cigarrillos</div>
+  <div class="pg-sub">Controlá tu consumo diario y mensual</div>
   <div class="card">
-    <div class="card-hdr"><div class="card-title">Hoy</div></div>
+    <div class="card-hdr"><div class="card-title">Hoy</div><span class="sync-dot" id="sync-cig"></span></div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0 16px">
       <div>
         <div class="cig-big" id="cig-num">0</div>
@@ -259,8 +219,8 @@ select.inp option{background:var(--gray-800)}
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px">
-        <button class="cig-ctrl-btn cig-add" onclick="addCig(1)">+</button>
-        <button class="cig-ctrl-btn cig-sub" onclick="addCig(-1)">−</button>
+        <button class="cig-btn cig-add" onclick="addCig(1)">+</button>
+        <button class="cig-btn cig-sub" onclick="addCig(-1)">−</button>
       </div>
     </div>
     <div class="sec-lbl" style="margin-top:0">Esta semana</div>
@@ -280,16 +240,14 @@ select.inp option{background:var(--gray-800)}
 
 <!-- STATS -->
 <div class="page" id="page-stats">
-  <div class="pg-hdr">
-    <div class="pg-eyebrow">Progreso</div>
-    <div class="pg-title">Tu evolución</div>
-    <div class="pg-sub">Medidas, tendencias y proyecciones</div>
-  </div>
+  <div class="pg-eyebrow">Progreso</div>
+  <div class="pg-title">Tu evolución</div>
+  <div class="pg-sub">Medidas, tendencias y proyecciones</div>
   <div class="card">
     <div class="card-hdr"><div class="card-title">Composición corporal</div></div>
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-val" id="s-weight" style="color:var(--lime)">77.5</div><div class="stat-lbl">kg</div></div>
-      <div class="stat-card"><div class="stat-val" id="s-pliegues" style="color:#FFD60A">93</div><div class="stat-lbl">mm actual</div></div>
+      <div class="stat-card"><div class="stat-val" id="s-pliegues" style="color:var(--yellow)">93</div><div class="stat-lbl">mm actual</div></div>
       <div class="stat-card"><div class="stat-val" style="color:#4ADE80">72</div><div class="stat-lbl">mm objetivo</div></div>
     </div>
     <div style="margin:4px 0 12px">
@@ -297,22 +255,22 @@ select.inp option{background:var(--gray-800)}
       <div class="pbar-row"><span>Progreso hacia 72mm</span><span id="pl-pct" style="font-weight:700;color:var(--lime)">0%</span></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-      <div class="inp-group" style="margin:0"><label>Peso (kg)</label><input class="inp" type="number" id="up-weight" step="0.1" placeholder="77.5"></div>
-      <div class="inp-group" style="margin:0"><label>Pliegues (mm)</label><input class="inp" type="number" id="up-pliegues" placeholder="93"></div>
+      <div class="inp-group" style="margin:0"><label>Peso (kg)</label><input class="inp" type="number" id="up-w" step="0.1" placeholder="77.5"></div>
+      <div class="inp-group" style="margin:0"><label>Pliegues (mm)</label><input class="inp" type="number" id="up-p" placeholder="93"></div>
     </div>
     <button class="btn btn-ghost btn-full btn-sm" style="margin-top:8px" onclick="updateBody()">Guardar medidas</button>
   </div>
   <div class="card">
     <div class="card-hdr"><div class="card-title">Esta semana</div></div>
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-val" id="s-sessions" style="color:#4ADE80">0</div><div class="stat-lbl">sesiones</div></div>
-      <div class="stat-card"><div class="stat-val" id="s-avg-cal" style="color:var(--lime)">—</div><div class="stat-lbl">kcal media</div></div>
-      <div class="stat-card"><div class="stat-val" id="s-cigs-wk" style="color:#88BBFF">0</div><div class="stat-lbl">cigarrillos</div></div>
+      <div class="stat-card"><div class="stat-val" id="s-sess" style="color:#4ADE80">0</div><div class="stat-lbl">sesiones</div></div>
+      <div class="stat-card"><div class="stat-val" id="s-kcal" style="color:var(--lime)">—</div><div class="stat-lbl">kcal media</div></div>
+      <div class="stat-card"><div class="stat-val" id="s-cigs" style="color:var(--purple)">0</div><div class="stat-lbl">cigarrillos</div></div>
     </div>
   </div>
   <div class="card">
     <div class="card-hdr"><div class="card-title">Proyección de pliegues</div></div>
-    <div id="proj-content"><div style="text-align:center;color:var(--gray-500);font-size:.75rem;padding:14px 0">Registrá al menos 3 días de comidas<br>para ver la proyección</div></div>
+    <div id="proj-content"><div style="text-align:center;color:var(--gray-500);font-size:.75rem;padding:14px 0">Registrá al menos 3 días de comidas para ver la proyección</div></div>
   </div>
   <div class="card">
     <div class="card-hdr"><div class="card-title">Últimas sesiones</div></div>
@@ -327,7 +285,7 @@ select.inp option{background:var(--gray-800)}
     <div class="modal-title">Agregar comida</div>
     <div class="inp-group">
       <label>¿Qué comiste?</label>
-      <textarea class="inp" id="food-txt" placeholder="ej: entraña con papas y ensalada&#10;ej: 6 fernets con coca&#10;ej: milanesa napolitana"></textarea>
+      <textarea class="inp" id="food-txt" placeholder="ej: entraña con papas y ensalada&#10;ej: 6 fernets con coca&#10;ej: bowl de avena con whey y banana"></textarea>
     </div>
     <div class="inp-group">
       <label>Momento</label>
@@ -352,10 +310,245 @@ select.inp option{background:var(--gray-800)}
 </div>
 
 <script>
-const S={day:'lun',gymDone:{},sessions:[],foods:{},cigs:{},cigGoal:0,weight:77.5,pliegues:93,pending:null};
-function load(){try{const d=localStorage.getItem('p_v3');if(d)Object.assign(S,JSON.parse(d))}catch(e){}}
-function save(){try{localStorage.setItem('p_v3',JSON.stringify(S))}catch(e){}}
+// ═══════════ CONFIG ═══════════
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvNWIie9KX4hxdwvkQbQxsz8jQVIZj2vs2NP4PaReIrWDdLWb93uQSpY0P4yTVHzpU/exec';
+const START_DATE = new Date('2026-05-19'); // Lunes semana 1
 
+// ═══════════ STATE (localStorage como cache) ═══════════
+const S = {
+  day:'lun', gymDone:{}, weight:77.5, pliegues:93,
+  foods:{}, cigs:{}, cigGoal:0, sessions:[], pending:null
+};
+function load(){try{const d=localStorage.getItem('p_v4');if(d)Object.assign(S,JSON.parse(d))}catch(e){}}
+function save(){try{localStorage.setItem('p_v4',JSON.stringify(S))}catch(e){}}
+
+// ═══════════ SHEETS SYNC ═══════════
+function syncDot(id, state){ // 'ok'|'err'|'loading'
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.className='sync-dot'+(state==='err'?' err':state==='loading'?' loading':'');
+}
+
+async function sheetPost(payload){
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',body:JSON.stringify(payload)});
+    return true;
+  }catch(e){return false;}
+}
+
+async function sheetGet(sheet){
+  try{
+    const r=await fetch(`${SCRIPT_URL}?sheet=${sheet}`);
+    const d=await r.json();
+    return d.ok?d.data:[];
+  }catch(e){return[];}
+}
+
+// ═══════════ WEEK CALCULATOR ═══════════
+function getCurrentWeek(){
+  const now=new Date();
+  const diff=Math.floor((now-START_DATE)/(7*24*60*60*1000));
+  return Math.max(1,Math.min(12,diff+1));
+}
+
+// ═══════════ 12-WEEK PLAN ═══════════
+// BLOQUE A: Semanas 1-4 (Base de fuerza con supersets)
+// BLOQUE B: Semanas 5-8 (Volumen + nuevos ejercicios)
+// BLOQUE C: Semanas 9-12 (Fuerza + trabajo unilateral)
+// Deload: Semana 4 y Semana 8
+
+const WEEKS = {
+  // ─── BLOQUE A ───
+  1:{bloque:'A',tipo:'Calibración',deload:false},
+  2:{bloque:'A',tipo:'Carga',deload:false},
+  3:{bloque:'A',tipo:'Carga +',deload:false},
+  4:{bloque:'A',tipo:'Deload',deload:true},
+  // ─── BLOQUE B ───
+  5:{bloque:'B',tipo:'Nuevo estímulo',deload:false},
+  6:{bloque:'B',tipo:'Carga',deload:false},
+  7:{bloque:'B',tipo:'Carga +',deload:false},
+  8:{bloque:'B',tipo:'Deload',deload:true},
+  // ─── BLOQUE C ───
+  9:{bloque:'C',tipo:'Unilateral base',deload:false},
+  10:{bloque:'C',tipo:'Carga',deload:false},
+  11:{bloque:'C',tipo:'Carga +',deload:false},
+  12:{bloque:'C',tipo:'Peak / Deload',deload:true},
+};
+
+// Ejercicios por bloque y día
+const EXERCISES = {
+  // ── PUSH ──
+  push:{
+    A:{ // Semanas 1-4
+      note:'Pecho: bajada en 3 segundos (tempo lento). Límite por el codo — no subas el peso.',
+      ss:[
+        {id:'A',na:'Press banca con barra',ta:'50 kg · RPE 7-8',nota:'Bajada en 3 seg. Tempo sobre peso.',nb:'Remo mancuerna unilateral',tb:'25 kg c/lado · RPE 7-8',notb:'',meta:'Empuje + Tirón',rest:'45 seg'},
+        {id:'B',na:'Press inclinado mancuernas',ta:'15 kg c/u · RPE 7-8',nota:'',nb:'Aperturas polea baja',tb:'calibrar · RPE 7',notb:'',meta:'Pecho',rest:'30 seg'},
+        {id:'C',na:'Press Arnold',ta:'8-10 kg c/u · RPE 7',nota:'',nb:'Elevaciones laterales',tb:'8 kg c/u · RPE 7',notb:'',meta:'Hombros',rest:'30 seg'},
+        {id:'D',na:'Extensión tríceps polea (cuerda)',ta:'25 kg · RPE 7',nota:'Codo derecho — rango cómodo',nb:'Curl con barra',tb:'22 kg · RPE 7',notb:'Si duele el codo, bajá el peso',meta:'Brazos finisher',rest:'20 seg'},
+      ]
+    },
+    B:{ // Semanas 5-8 — NUEVOS EJERCICIOS
+      note:'Bloque B: cambiamos ángulos y estímulos. Press tras nuca con mancuernas para mayor rango de hombros. Dips en máquina para pecho bajo.',
+      ss:[
+        {id:'A',na:'Press banca con mancuernas',ta:'20-22 kg c/u · RPE 7-8',nota:'Mancuernas dan más rango que la barra. Bajada lenta.',nb:'Remo en polea baja sentado',tb:'45 kg · RPE 7-8',notb:'Agarre neutro, codos pegados al cuerpo.',meta:'Empuje + Tirón',rest:'45 seg'},
+        {id:'B',na:'Dips en máquina asistida',ta:'peso moderado · RPE 7-8',nota:'Foco en pecho bajo — inclinado hacia adelante.',nb:'Press inclinado mancuernas',tb:'15 kg c/u · RPE 7',notb:'',meta:'Pecho',rest:'30 seg'},
+        {id:'C',na:'Press hombros tras nuca mancuernas',ta:'8 kg c/u · RPE 7',nota:'Rango completo — controlá el movimiento.',nb:'Elevaciones laterales en cable',tb:'calibrar · RPE 7-8',notb:'Tensión constante vs mancuernas',meta:'Hombros',rest:'30 seg'},
+        {id:'D',na:'Extensión tríceps overhead (polea)',ta:'20 kg · RPE 7',nota:'Cabeza de tríceps larga — diferente al push-down.',nb:'Face pull con cuerda',tb:'calibrar · RPE 7',notb:'Salud de hombros — no saltearlo',meta:'Tríceps + Manguito',rest:'20 seg'},
+      ]
+    },
+    C:{ // Semanas 9-12 — UNILATERAL + FUERZA
+      note:'Bloque C: más trabajo unilateral para corregir asimetrías. Press con un brazo en cable — más estabilidad requerida.',
+      ss:[
+        {id:'A',na:'Press banca con barra',ta:'52.5 kg · RPE 8',nota:'Vuelta a barra con más carga.',nb:'Remo mancuerna unilateral',tb:'27.5 kg c/lado · RPE 8',notb:'',meta:'Empuje + Tirón · Fuerza',rest:'45 seg'},
+        {id:'B',na:'Press inclinado mancuernas',ta:'17-18 kg c/u · RPE 8',nota:'',nb:'Aperturas en polea alta (pec deck)',tb:'calibrar · RPE 7',notb:'',meta:'Pecho',rest:'30 seg'},
+        {id:'C',na:'Press Arnold con pausa',ta:'10-12 kg c/u · RPE 7-8',nota:'1 seg de pausa abajo en cada rep.',nb:'Elevaciones laterales 21s',tb:'6 kg c/u',notb:'7 reps abajo + 7 arriba + 7 completas',meta:'Hombros intensidad',rest:'30 seg'},
+        {id:'D',na:'Extensión tríceps polea (cuerda)',ta:'27.5 kg · RPE 7-8',nota:'Codo derecho — respetá el rango.',nb:'Curl concentrado mancuerna',tb:'12 kg · RPE 8',notb:'Aislamiento total de bíceps',meta:'Brazos',rest:'20 seg'},
+      ]
+    }
+  },
+  // ── LEGS ──
+  legs:{
+    A:{
+      note:'Sentadilla 90 kg con buen esfuerzo — mantener peso, mejorar técnica y profundidad. Peso muerto 80 kg: bien calibrado.',
+      ss:[
+        {id:'A',na:'Sentadilla con barra',ta:'90 kg · RPE 8',nota:'Profundidad completa — no cedas la técnica.',nb:'Curl femoral máquina',tb:'30 kg · RPE 7',notb:'',meta:'Quad + Isquio',rest:'45 seg'},
+        {id:'B',na:'Peso muerto convencional',ta:'80 kg · RPE 7-8',nota:'Bien calibrado — el esfuerzo que sentís es correcto.',nb:'Prensa 45°',tb:'130 kg · RPE 7-8',notb:'',meta:'Cadena posterior',rest:'45 seg'},
+        {id:'C',na:'Elevación piernas colgado',ta:'3×12',nota:'',nb:'Pallof press polea',tb:'calibrar · RPE 7',notb:'',meta:'Core',rest:'20 seg'},
+        {id:'D',na:'Dead bug',ta:'2×10 c/lado',nota:'',nb:'Plancha lateral',tb:'2×40 seg c/lado',notb:'',meta:'Core anti-extensión',rest:'20 seg'},
+      ]
+    },
+    B:{
+      note:'Bloque B: sumamos zancadas búlgaras — trabajo unilateral que revela asimetrías. Hack squat o goblet squat pesado en lugar de prensa.',
+      ss:[
+        {id:'A',na:'Sentadilla con barra',ta:'90 kg · RPE 8',nota:'Misma carga — foco en velocidad concéntrica.',nb:'Zancadas búlgaras (Bulgarian split squat)',tb:'10-12 kg c/u · RPE 7-8',notb:'Pie trasero elevado. Controlá la bajada.',meta:'Quad + Unilateral',rest:'45 seg'},
+        {id:'B',na:'Peso muerto rumano (RDL)',ta:'70 kg · RPE 7-8',nota:'Diferente al convencional — isquios más aislados.',nb:'Goblet squat con kettlebell',tb:'20-24 kg · RPE 7',notb:'Profundidad máxima — movilidad de cadera.',meta:'Cadena posterior',rest:'45 seg'},
+        {id:'C',na:'Hip thrust en banco',ta:'calibrar · RPE 7-8',nota:'Glúteo máximo — nuevo estímulo.',nb:'Curl femoral máquina',tb:'32 kg · RPE 7-8',notb:'',meta:'Glúteo + Isquio',rest:'30 seg'},
+        {id:'D',na:'Rueda abdominal (ab wheel)',ta:'3×10-12',nota:'',nb:'Plancha con toque de hombros',tb:'3×10 c/lado',notb:'Core anti-rotación.',meta:'Core dinámico',rest:'20 seg'},
+      ]
+    },
+    C:{
+      note:'Bloque C: fuerza de piernas al máximo. Peso muerto pesado como ejercicio central. Sentadilla con pausa abajo.',
+      ss:[
+        {id:'A',na:'Peso muerto convencional',ta:'85-90 kg · RPE 8-9',nota:'Ejercicio central esta semana. Técnica limpia.',nb:'Sentadilla con pausa (2 seg abajo)',tb:'75 kg · RPE 8',notb:'La pausa abajo elimina el rebote — más difícil.',meta:'Fuerza central',rest:'60 seg'},
+        {id:'B',na:'Zancadas búlgaras',ta:'12-14 kg c/u · RPE 8',nota:'',nb:'Prensa 45°',tb:'140 kg · RPE 8',notb:'',meta:'Quad + Unilateral',rest:'45 seg'},
+        {id:'C',na:'Hip thrust en banco',ta:'calibrar · RPE 8',nota:'Más peso que Bloque B.',nb:'Curl femoral máquina',tb:'35 kg · RPE 8',notb:'',meta:'Glúteo + Isquio',rest:'30 seg'},
+        {id:'D',na:'Elevación piernas colgado',ta:'3×15',nota:'',nb:'Russian twist con disco',tb:'3×15 c/lado · 10 kg',notb:'Rotación de core con carga.',meta:'Core',rest:'20 seg'},
+      ]
+    }
+  },
+  // ── PULL ──
+  pull:{
+    A:{
+      note:'Dorsalera 45-50 kg bien calibrada. Curl martillo drop set — tu método funciona. Si duele el codo en el curl, bajá a 10 kg.',
+      ss:[
+        {id:'A',na:'Jalón al pecho (dorsalera)',ta:'45-50 kg · RPE 7-8',nota:'',nb:'Remo con barra',tb:'40 kg · RPE 7-8',notb:'',meta:'Espalda',rest:'45 seg'},
+        {id:'B',na:'Remo mancuerna unilateral',ta:'25 kg · RPE 7',nota:'',nb:'Curl martillo drop set',tb:'18/16/14/12/10 kg · 6 reps c/u',notb:'Tu método — mantenerlo.',meta:'Espalda + Bíceps',rest:'30 seg'},
+        {id:'C',na:'Curl mancuernas',ta:'12 kg · RPE 7',nota:'Si duele el codo: bajá a 10 kg.',nb:'Curl polea baja',tb:'calibrar · RPE 7',notb:'Tensión constante.',meta:'Bíceps finisher',rest:'30 seg'},
+        {id:'D',na:'Ab wheel',ta:'3×10-12',nota:'',nb:'Elevación piernas colgado',tb:'2×12',notb:'',meta:'Core',rest:'20 seg'},
+      ]
+    },
+    B:{
+      note:'Bloque B: jalón con agarre neutro (más bíceps y dorsal central). Face pull para salud de hombros. Curl predicador para aislamiento.',
+      ss:[
+        {id:'A',na:'Jalón neutro (agarre cerrado)',ta:'45-50 kg · RPE 7-8',nota:'Agarre neutro activa más el dorsal central.',nb:'Remo en polea sentado (agarre neutro)',tb:'50 kg · RPE 8',notb:'Tira los codos hacia atrás — no las manos.',meta:'Espalda',rest:'45 seg'},
+        {id:'B',na:'Remo mancuerna unilateral',ta:'27.5 kg · RPE 8',nota:'',nb:'Pullover con mancuerna',tb:'16-18 kg · RPE 7',notb:'Expansión de caja torácica + dorsal.',meta:'Espalda + Serrato',rest:'30 seg'},
+        {id:'C',na:'Curl predicador máquina (o banco)',ta:'calibrar · RPE 8',nota:'Aislamiento máximo de bíceps.',nb:'Curl martillo en cable',tb:'calibrar · RPE 7-8',notb:'Cable da tensión constante vs mancuerna.',meta:'Bíceps',rest:'30 seg'},
+        {id:'D',na:'Face pull con cuerda',ta:'calibrar · RPE 7',nota:'Manguito rotador y deltoides posterior.',nb:'Encogimientos de hombros',tb:'20 kg c/u · RPE 7',notb:'Trapecio superior — complemento de espalda.',meta:'Hombros salud',rest:'20 seg'},
+      ]
+    },
+    C:{
+      note:'Bloque C: jalón jalón con lastres o peso adicional. Trabajo de bíceps con énfasis excéntrico.',
+      ss:[
+        {id:'A',na:'Jalón al pecho (dorsalera)',ta:'52-55 kg · RPE 8',nota:'Segunda subida de carga en jalón.',nb:'Remo con barra',tb:'42.5 kg · RPE 8',notb:'',meta:'Espalda fuerza',rest:'45 seg'},
+        {id:'B',na:'Remo mancuerna unilateral',ta:'30 kg · RPE 8',nota:'',nb:'Pullover con mancuerna',tb:'18-20 kg · RPE 8',notb:'',meta:'Espalda volumen',rest:'30 seg'},
+        {id:'C',na:'Curl bíceps excéntrico',ta:'10-12 kg · 3 seg bajada',nota:'Sube rápido, baja en 3 seg — máximo daño muscular.',nb:'Curl predicador',tb:'calibrar · RPE 8',notb:'',meta:'Bíceps intensidad',rest:'30 seg'},
+        {id:'D',na:'Face pull con cuerda',ta:'calibrar · RPE 7',nota:'Siempre. Salud de hombros.',nb:'Ab wheel desde rodillas',tb:'3×12',notb:'',meta:'Salud + Core',rest:'20 seg'},
+      ]
+    }
+  },
+  // ── MOVILIDAD (igual todos los bloques) ──
+  mob:{
+    note:'Llegás activado al fútbol de noche. Calidad sobre cantidad.',
+    solos:[
+      {n:'🪢 Soga',t:'3 × 1 min',note:'Entrada en calor'},
+      {n:'Movilidad tobillo en pared',t:'2 × 10 c/lado',note:'Punta del pie ~10 cm. Rodilla toca sin levantar el talón.'},
+      {n:'Rotaciones de tobillo en descarga',t:'2 × 15 c/lado',note:''},
+      {n:'Terminal knee extension con banda',t:'2 × 15 c/lado',note:'Activa VMO — protege meniscos y ligamentos.'},
+      {n:'Step down excéntrico',t:'2 × 10 c/lado',note:'Bajada en 3 seg sobre una pierna.'},
+      {n:'Hip 90/90 con rotación activa',t:'3 × 10 c/lado',note:'El más completo para movilidad de cadera.'},
+      {n:'Frog stretch con respiración',t:'2 × 45 seg',note:'En cada exhale, dejá caer la cadera.'},
+      {n:'Hip CARs',t:'2 × 5 c/lado',note:'Rotación completa de cadera en cuadrupedia.'},
+      {n:'Couch stretch',t:'2 × 45 seg c/lado',note:'Crítico para flexores de cadera.'},
+      {n:'Rotación torácica en cuadrupedia',t:'2 × 10 c/lado',note:''},
+      {n:'Extensión torácica sobre foam roller',t:'2 × 10 reps',note:''},
+      {n:'Rotaciones externas con banda',t:'2 × 15 c/lado',note:'Manguito rotador — nunca saltearlo.'},
+      {n:'Apertura hombros con banda',t:'2 × 10 por ángulo',note:''},
+    ]
+  },
+  // ── RECUPERACIÓN ──
+  rec:{
+    note:'Post-fútbol. FC máxima 120 ppm en la bici. Sin compuestos pesados.',
+    solos:[
+      {n:'Bicicleta estática',t:'20 min · FC 110-120 ppm',note:'Ritmo conversacional — si no podés hablar, bajá.'},
+      {n:'Elevaciones laterales',t:'3 × 15 · liviano',note:''},
+      {n:'Pájaros',t:'3 × 15',note:''},
+      {n:'Curl mancuernas alterno',t:'3 × 12 · sin forzar',note:''},
+      {n:'Plancha frontal',t:'3 × 45 seg',note:''},
+    ]
+  },
+  // ── ZONA 2 ──
+  z2:{
+    note:'FC 120-135 ppm. Ritmo conversacional. Quema grasa sin tocar el músculo.',
+    solos:[
+      {n:'Trote continuo Zona 2',t:'35-40 min · FC 120-135 ppm',note:'Si la FC sube de 135, bajá el ritmo. El objetivo es poder mantener una conversación.'},
+    ]
+  }
+};
+
+// PLAN_COLORS por día
+const DAY_META = {
+  lun:{color:'#C8FF00',bg:'rgba(200,255,0,.15)',label:'PUSH'},
+  mar:{color:'#4ADE80',bg:'rgba(74,222,128,.15)',label:'LEGS'},
+  mie:{color:'#A78BFA',bg:'rgba(167,139,250,.15)',label:'PULL'},
+  jue:{color:'#FFD60A',bg:'rgba(255,214,10,.15)',label:'MOV'},
+  vie:{color:'#A78BFA',bg:'rgba(167,139,250,.15)',label:'REC'},
+  sab:{color:'#FFD60A',bg:'rgba(255,214,10,.15)',label:'Z2'},
+};
+
+function getPlanForDay(week, day){
+  const w = WEEKS[week];
+  if(!w) return null;
+  const bloque = w.deload ? 'DELOAD' : w.bloque;
+
+  if(day === 'jue') return {type:'mob', data: EXERCISES.mob};
+  if(day === 'vie') return {type:'rec', data: EXERCISES.rec};
+  if(day === 'sab') return {type:'z2', data: EXERCISES.z2};
+
+  if(bloque === 'DELOAD'){
+    // Deload: mismos ejercicios del bloque anterior con -40% series y RPE 6
+    const prevBloque = w.bloque;
+    const exMap = {lun:'push', mar:'legs', mie:'pull'};
+    const exKey = exMap[day];
+    if(!exKey) return null;
+    const base = EXERCISES[exKey][prevBloque];
+    return {type:'deload', data:{
+      note:'DELOAD — mismos ejercicios, -40% series, RPE máx 6. El cuerpo consolida las adaptaciones.',
+      ss: base.ss.map(ss=>({...ss,
+        ta: ss.ta.replace(/RPE \d[-\d]*/,'RPE 6'),
+        tb: ss.tb.replace(/RPE \d[-\d]*/,'RPE 6'),
+        meta: '2 series · '+ss.meta+' · Deload',
+      }))
+    }};
+  }
+
+  const exMap = {lun:'push', mar:'legs', mie:'pull'};
+  const exKey = exMap[day];
+  if(!exKey) return null;
+  return {type:exKey, data: EXERCISES[exKey][bloque]};
+}
+
+// ═══════════ FOOD DB ═══════════
 const FDB=[
   {k:['entrana','entraña'],c:280,p:28,ch:0,f:18},
   {k:['vacio','vacío'],c:320,p:30,ch:0,f:22},
@@ -393,7 +586,6 @@ const FDB=[
   {k:['cafe','café','torrado'],c:20,p:0,ch:2,f:1},
   {k:['casancrem'],c:80,p:3,ch:2,f:7},
 ];
-
 function estimate(text){
   const l=text.toLowerCase();
   let c=0,p=0,ch=0,f=0;
@@ -410,93 +602,62 @@ function estimate(text){
   return{cal:Math.round(c),prot:Math.round(p),carb:Math.round(ch),fat:Math.round(f)};
 }
 
+// ═══════════ NAV ═══════════
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('act'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
   document.getElementById('page-'+id).classList.add('act');
   const idx={gym:0,food:1,cigs:2,stats:3}[id];
   document.querySelectorAll('.nb')[idx].classList.add('act');
-  if(id==='food')renderFood();
-  if(id==='cigs')renderCigs();
-  if(id==='stats')renderStats();
+  if(id==='food') renderFood();
+  if(id==='cigs') renderCigs();
+  if(id==='stats') renderStats();
 }
 
-const PLAN={
-  lun:{color:'#C8FF00',colorBg:'rgba(200,255,0,.15)',label:'PUSH',title:'Pecho / Hombros / Tríceps',
-    note:{t:'lime',i:'💪',txt:'Pecho: bajada en 3 segundos. El tempo hace el trabajo — no subas el peso con el codo.'},
-    ss:[
-      {id:'A',na:'Press banca con barra',ta:'4×8-12 · 50 kg · RPE 7-8',nota:'Bajada en 3 seg. Límite por el codo.',nb:'Remo mancuerna unilateral',tb:'4×8 c/lado · 25 kg · RPE 7-8',notb:'',meta:'4 series · Empuje + Tirón',rest:'45 seg'},
-      {id:'B',na:'Press inclinado mancuernas',ta:'3×8-12 · 15 kg c/u · RPE 7-8',nota:'',nb:'Aperturas polea baja',tb:'3×12 · calibrar · RPE 7',notb:'',meta:'3 series · Pecho',rest:'30 seg'},
-      {id:'C',na:'Press Arnold',ta:'3×12 · 8-10 kg c/u · RPE 7',nota:'',nb:'Elevaciones laterales',tb:'3×12-15 · 8 kg c/u · RPE 7',notb:'',meta:'3 series · Hombros',rest:'30 seg'},
-      {id:'D',na:'Extensión tríceps polea',ta:'3×12 · 25 kg · RPE 7',nota:'Codo derecho — rango cómodo',nb:'Curl con barra',tb:'3×10 · 22 kg · RPE 7',notb:'Si duele el codo, bajá el peso',meta:'3 series · Brazos',rest:'20 seg'},
-    ]},
-  mar:{color:'#4ADE80',colorBg:'rgba(74,222,128,.15)',label:'LEGS',title:'Tren Inferior + Core',
-    note:{t:'green',i:'🦵',txt:'Sentadilla 90 kg con buen esfuerzo — mantener peso, mejorar profundidad. Peso muerto 80 kg: bien calibrado, mantener.'},
-    ss:[
-      {id:'A',na:'Sentadilla con barra',ta:'4×8-10 · 90 kg · RPE 8',nota:'Técnica limpia — profundidad completa.',nb:'Curl femoral máquina',tb:'4×12 · 30 kg · RPE 7',notb:'',meta:'4 series · Quad + Isquio',rest:'45 seg'},
-      {id:'B',na:'Peso muerto convencional',ta:'3×8 · 80 kg · RPE 7-8',nota:'Bien calibrado — mantener.',nb:'Prensa 45°',tb:'3×12 · 130 kg · RPE 7-8',notb:'',meta:'3 series · Cadena posterior',rest:'45 seg'},
-      {id:'C',na:'Elevación piernas colgado',ta:'3×12',nota:'',nb:'Pallof press polea',tb:'3×12 c/lado · RPE 7',notb:'',meta:'3 series · Core',rest:'20 seg'},
-      {id:'D',na:'Dead bug',ta:'2×10 c/lado',nota:'',nb:'Plancha lateral',tb:'2×40 seg c/lado',notb:'',meta:'2 series · Core anti-extensión',rest:'20 seg'},
-    ]},
-  mie:{color:'#A78BFA',colorBg:'rgba(167,139,250,.15)',label:'PULL',title:'Espalda / Bíceps',
-    note:{t:'blue',i:'💪',txt:'Dorsalera 45-50 kg bien calibrada. Curl martillo drop set — tu método funciona. Si duele el codo en el curl, bajá a 10 kg.'},
-    ss:[
-      {id:'A',na:'Jalón al pecho (dorsalera)',ta:'4×8-10 · 45-50 kg · RPE 7-8',nota:'',nb:'Remo con barra',tb:'4×8 · 40 kg · RPE 7-8',notb:'',meta:'4 series · Espalda',rest:'45 seg'},
-      {id:'B',na:'Remo mancuerna unilateral',ta:'3×10 c/lado · 25 kg · RPE 7',nota:'',nb:'Curl martillo drop set',tb:'3 vueltas · 18/16/14/12/10 kg · 6 reps c/u',notb:'Tu método — mantenerlo.',meta:'3 series · Espalda + Bíceps',rest:'30 seg'},
-      {id:'C',na:'Curl mancuernas',ta:'3×10 · 12 kg · RPE 7',nota:'Si duele el codo: bajá a 10 kg.',nb:'Curl polea baja',tb:'2×15 · calibrar · RPE 7',notb:'Tensión constante',meta:'3 series · Bíceps finisher',rest:'30 seg'},
-      {id:'D',na:'Ab wheel',ta:'3×10-12',nota:'',nb:'Elevación piernas colgado',tb:'2×12',notb:'',meta:'2 series · Core',rest:'20 seg'},
-    ]},
-  jue:{color:'#FFD60A',colorBg:'rgba(255,214,10,.15)',label:'MOV',title:'Protocolo Preventivo',
-    note:{t:'yellow',i:'⚽',txt:'Llegás activado al fútbol de noche. Calidad sobre cantidad.'},
-    solos:[
-      {n:'🪢 Soga',t:'3 × 1 min',note:'Entrada en calor'},
-      {n:'Movilidad tobillo en pared',t:'2 × 10 c/lado',note:'Punta del pie ~10 cm. Rodilla toca sin levantar el talón.'},
-      {n:'Rotaciones de tobillo',t:'2 × 15 c/lado',note:''},
-      {n:'Terminal knee extension con banda',t:'2 × 15 c/lado',note:'Activa VMO — protege meniscos.'},
-      {n:'Step down excéntrico',t:'2 × 10 c/lado',note:'Bajada en 3 seg sobre una pierna.'},
-      {n:'Hip 90/90 con rotación activa',t:'3 × 10 c/lado',note:'El más completo para movilidad de cadera.'},
-      {n:'Frog stretch con respiración',t:'2 × 45 seg',note:''},
-      {n:'Hip CARs',t:'2 × 5 c/lado',note:'Rotación completa de cadera en cuadrupedia.'},
-      {n:'Couch stretch',t:'2 × 45 seg c/lado',note:'Crítico para flexores de cadera.'},
-      {n:'Rotación torácica en cuadrupedia',t:'2 × 10 c/lado',note:''},
-      {n:'Extensión torácica sobre foam roller',t:'2 × 10 reps',note:''},
-      {n:'Rotaciones externas con banda',t:'2 × 15 c/lado',note:'Manguito rotador — nunca saltearlo.'},
-      {n:'Apertura hombros con banda',t:'2 × 10 por ángulo',note:''},
-    ]},
-  vie:{color:'#A78BFA',colorBg:'rgba(167,139,250,.15)',label:'REC',title:'Bici + Tonificación',
-    note:{t:'blue',i:'🚴',txt:'Post-fútbol. FC máxima 120 ppm en la bici. Sin compuestos pesados.'},
-    solos:[
-      {n:'Bicicleta estática',t:'20 min · FC 110-120 ppm',note:'Ritmo conversacional.'},
-      {n:'Elevaciones laterales',t:'3 × 15 · liviano',note:''},
-      {n:'Pájaros',t:'3 × 15',note:''},
-      {n:'Curl mancuernas alterno',t:'3 × 12 · sin forzar',note:''},
-      {n:'Plancha frontal',t:'3 × 45 seg',note:''},
-    ]},
-  sab:{color:'#FFD60A',colorBg:'rgba(255,214,10,.15)',label:'Z2',title:'Trote suave',
-    note:{t:'yellow',i:'🏃',txt:'FC 120-135 ppm. Ritmo conversacional. 35-40 min. Quema grasa sin tocar el músculo.'},
-    solos:[
-      {n:'Trote continuo Zona 2',t:'35-40 min · FC 120-135 ppm',note:'Si la FC sube de 135, bajá el ritmo.'},
-    ]},
-};
-
+// ═══════════ GYM ═══════════
 function renderGym(day){
   S.day=day;
-  const plan=PLAN[day];
-  document.getElementById('gym-sub').textContent={lun:'Lunes',mar:'Martes',mie:'Miércoles',jue:'Jueves',vie:'Viernes',sab:'Sábado'}[day]+' · '+new Date().toLocaleDateString('es-AR',{day:'numeric',month:'long'});
+  const week=getCurrentWeek();
+  const wInfo=WEEKS[week];
+  const plan=getPlanForDay(week,day);
+  const meta=DAY_META[day];
+  const dayNames={lun:'Lunes',mar:'Martes',mie:'Miércoles',jue:'Jueves',vie:'Viernes',sab:'Sábado'};
+
+  document.getElementById('gym-sub').textContent=dayNames[day]+' · '+new Date().toLocaleDateString('es-AR',{day:'numeric',month:'long'});
+  document.getElementById('gym-week-badge').innerHTML=`
+    <div class="week-badge">Semana ${week} / 12 · Bloque ${wInfo.bloque} · ${wInfo.tipo}</div>`;
+
   if(!plan){document.getElementById('gym-content').innerHTML='<div class="note note-lime"><span class="note-icon">😴</span><span>Día de descanso.</span></div>';return;}
-  
-  const noteClass={lime:'note-lime',yellow:'note-yellow',green:'note-green',blue:'note-blue'}[plan.note.t]||'note-lime';
-  let h=`<div class="note ${noteClass}"><span class="note-icon">${plan.note.i}</span><span>${plan.note.txt}</span></div>`;
-  
-  h+=`<div class="card" style="margin-bottom:10px;border-color:${plan.color}22">
+
+  const noteType=plan.type==='deload'?'yellow':
+    plan.type==='mob'?'yellow':plan.type==='rec'||plan.type==='z2'?'blue':'lime';
+  const noteClass='note-'+noteType;
+  let h=`<div class="note ${noteClass}"><span class="note-icon">${
+    plan.type==='mob'?'⚽':plan.type==='rec'?'🚴':plan.type==='z2'?'🏃':plan.type==='deload'?'🔋':'💪'
+  }</span><span>${plan.data.note}</span></div>`;
+
+  h+=`<div class="card" style="margin-bottom:10px;border-color:${meta.color}22">
     <div style="display:flex;align-items:center;gap:10px">
-      <div style="width:38px;height:38px;border-radius:10px;background:${plan.colorBg};border:1px solid ${plan.color}44;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:${plan.color};letter-spacing:1px">${plan.label}</div>
-      <div><div style="font-size:1rem;font-weight:700;color:var(--white);letter-spacing:-.3px">${plan.title}</div>
-      <div style="font-size:.62rem;color:var(--gray-400);margin-top:2px">45 seg compuestos · 30 seg acc · 20 seg core</div></div>
+      <div style="width:38px;height:38px;border-radius:10px;background:${meta.bg};border:1px solid ${meta.color}44;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:${meta.color};letter-spacing:1px">${meta.label}</div>
+      <div>
+        <div style="font-size:.98rem;font-weight:700;color:var(--white);letter-spacing:-.3px">${
+          plan.type==='mob'?'Protocolo Preventivo':
+          plan.type==='rec'?'Bici + Tonificación':
+          plan.type==='z2'?'Trote suave':
+          plan.type==='deload'?'DELOAD — Recuperación activa':
+          plan.type==='push'?'Pecho / Hombros / Tríceps':
+          plan.type==='legs'?'Tren Inferior + Core':'Espalda / Bíceps'
+        }</div>
+        <div style="font-size:.6rem;color:var(--gray-400);margin-top:2px">${
+          plan.type==='deload'?'-40% series · RPE máx 6':
+          (plan.type==='mob'||plan.type==='rec'||plan.type==='z2')?'Calidad sobre cantidad':
+          '45 seg comp · 30 seg acc · 20 seg core'
+        }</div>
+      </div>
     </div></div>`;
 
   if(day!=='vie'&&day!=='sab'){
-    const wuId='wu-'+day,done=S.gymDone[wuId]?'done':'';
+    const wuId='wu-'+week+'-'+day,done=S.gymDone[wuId]?'done':'';
     h+=`<div class="ex-card ${done}" onclick="toggleItem('${wuId}')">
       <div class="ex-main"><div class="ex-chk">✓</div><div class="ex-info">
         <div class="ex-name">🔥 Zona media / Calentamiento</div>
@@ -504,13 +665,13 @@ function renderGym(day){
       </div></div></div>`;
   }
 
-  if(plan.ss){
+  if(plan.data.ss){
     h+=`<div class="sec-lbl">Supersets</div>`;
-    plan.ss.forEach(ss=>{
-      const id='ss-'+day+'-'+ss.id,done=S.gymDone[id]?'done':'';
+    plan.data.ss.forEach(ss=>{
+      const id='ss-'+week+'-'+day+'-'+ss.id,done=S.gymDone[id]?'done':'';
       h+=`<div class="ss-card ${done}" id="${id}">
         <div class="ss-hdr" onclick="toggleItem('${id}')">
-          <div class="ss-letter" style="background:${plan.colorBg};color:${plan.color};border:1px solid ${plan.color}44">${ss.id}</div>
+          <div class="ss-letter" style="background:${meta.bg};color:${meta.color};border:1px solid ${meta.color}44">${ss.id}</div>
           <div class="ss-inf"><div class="ss-nm">${ss.na} + ${ss.nb}</div><div class="ss-mt">${ss.meta}</div></div>
           <div class="ss-chk">✓</div>
         </div>
@@ -524,15 +685,15 @@ function renderGym(day){
             ${ss.notb?`<div class="ss-ex-note">${ss.notb}</div>`:''}
           </div>
         </div>
-        <div class="ss-rest">⏱ Descanso <strong>${ss.rest}</strong></div>
+        <div class="ss-rest">⏱ Descanso <strong>${ss.rest||'45 seg'}</strong> — cronómetro activo</div>
       </div>`;
     });
   }
 
-  if(plan.solos){
+  if(plan.data.solos){
     h+=`<div class="sec-lbl">Ejercicios</div>`;
-    plan.solos.forEach(sol=>{
-      const id='sol-'+day+'-'+sol.n.replace(/[^a-z]/gi,'').substring(0,8),done=S.gymDone[id]?'done':'';
+    plan.data.solos.forEach(sol=>{
+      const id='sol-'+week+'-'+day+'-'+sol.n.replace(/[^a-z]/gi,'').substring(0,8),done=S.gymDone[id]?'done':'';
       h+=`<div class="ex-card ${done}" onclick="toggleItem('${id}')">
         <div class="ex-main"><div class="ex-chk">✓</div><div class="ex-info">
           <div class="ex-name">${sol.n}</div>
@@ -550,16 +711,31 @@ function switchDay(day,btn){
   document.querySelectorAll('.pill-tab').forEach(b=>b.classList.remove('act'));
   btn.classList.add('act');renderGym(day);
 }
-function saveSession(){
-  const fc=document.getElementById('l-fc').value,cal=document.getElementById('l-cal').value,dur=document.getElementById('l-dur').value,notes=document.getElementById('l-notes').value;
+
+async function saveSession(){
+  const fc=document.getElementById('l-fc').value;
+  const cal=document.getElementById('l-cal').value;
+  const dur=document.getElementById('l-dur').value;
+  const notes=document.getElementById('l-notes').value;
   if(!fc&&!cal&&!notes){alert('Completá al menos un campo.');return;}
-  S.sessions.unshift({date:new Date().toISOString(),day:S.day,fc,cal,dur,notes});
-  if(S.sessions.length>100)S.sessions.pop();
-  save();['l-fc','l-cal','l-dur','l-notes'].forEach(id=>{document.getElementById(id).value='';});
-  const btn=event.target;btn.textContent='✓ Guardado';btn.style.background='var(--green-mid)';
-  setTimeout(()=>{btn.textContent='Guardar sesión';btn.style.background='';},2000);
+  const week=getCurrentWeek();
+  const sess={date:new Date().toISOString(),day:S.day,week,fc,cal,dur,notes,id:Date.now().toString()};
+  S.sessions.unshift(sess);
+  if(S.sessions.length>200)S.sessions.pop();
+  save();
+  ['l-fc','l-cal','l-dur','l-notes'].forEach(id=>{document.getElementById(id).value='';});
+  const btn=event.target;btn.textContent='Guardando...';btn.style.opacity='.7';
+  syncDot('sync-gym','loading');
+  const ok=await sheetPost({sheet:'Sesiones',action:'append',row:[
+    new Date().toISOString().split('T')[0],S.day,week,fc,cal,dur,notes,sess.id
+  ]});
+  syncDot('sync-gym',ok?'ok':'err');
+  btn.textContent=ok?'✓ Guardado':'✓ Guardado (sin sync)';
+  btn.style.opacity='1';btn.style.background=ok?'var(--green)':'var(--yellow)';btn.style.color=ok?'#fff':'#000';
+  setTimeout(()=>{btn.textContent='Guardar sesión';btn.style.background='';btn.style.color='';},2500);
 }
 
+// ═══════════ FOOD ═══════════
 function todayK(){return new Date().toISOString().split('T')[0];}
 function getToday(){return S.foods[todayK()]||[];}
 
@@ -591,7 +767,7 @@ function renderFood(){
   ['desayuno','mediodia','merienda','cena','snack','alcohol'].forEach(m=>{
     if(!byMeal[m])return;
     const mCal=byMeal[m].reduce((a,b)=>a+b.cal,0);
-    h+=`<div class="card"><div class="meal-hdr">${icons[m]||m} <span class="chip chip-lime" style="margin-left:4px">${mCal} kcal</span></div>`;
+    h+=`<div class="card"><div class="meal-hdr">${icons[m]||m}<span class="chip chip-lime" style="margin-left:4px">${mCal} kcal</span></div>`;
     byMeal[m].forEach(f=>{
       h+=`<div class="food-item"><div><div class="fi-name">${f.name}</div><div class="fi-macros">P ${f.prot}g · C ${f.carb}g · G ${f.fat}g</div></div>
         <div style="display:flex;align-items:center;gap:8px"><div class="fi-cal">${f.cal}</div>
@@ -614,21 +790,54 @@ function estimateFood(){
   const r=document.getElementById('food-est');r.style.display='block';
   r.innerHTML=`<div class="card" style="background:var(--gray-700)">
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;text-align:center">
-      <div><div style="font-size:1.5rem;font-weight:700;color:var(--lime);letter-spacing:-1px">${est.cal}</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">kcal</div></div>
-      <div><div style="font-size:1.5rem;font-weight:700;color:#4ADE80;letter-spacing:-1px">${est.prot}g</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">prot</div></div>
-      <div><div style="font-size:1.5rem;font-weight:700;color:#FFD60A;letter-spacing:-1px">${est.carb}g</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">carbs</div></div>
-      <div><div style="font-size:1.5rem;font-weight:700;color:#FF8888;letter-spacing:-1px">${est.fat}g</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">grasas</div></div>
+      <div><div style="font-size:1.45rem;font-weight:700;color:var(--lime);letter-spacing:-1px">${est.cal}</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">kcal</div></div>
+      <div><div style="font-size:1.45rem;font-weight:700;color:#4ADE80;letter-spacing:-1px">${est.prot}g</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">prot</div></div>
+      <div><div style="font-size:1.45rem;font-weight:700;color:var(--yellow);letter-spacing:-1px">${est.carb}g</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">carbs</div></div>
+      <div><div style="font-size:1.45rem;font-weight:700;color:#FF8888;letter-spacing:-1px">${est.fat}g</div><div style="font-size:.5rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-top:2px">grasas</div></div>
     </div>
     <div style="font-size:.58rem;color:var(--gray-500);text-align:center;margin-top:8px">Estimación basada en ingredientes detectados</div>
   </div>`;
   document.getElementById('food-confirm').style.display='block';
 }
-function confirmFood(){if(!S.pending)return;const k=todayK();if(!S.foods[k])S.foods[k]=[];S.foods[k].push(S.pending);save();closeFoodModal();renderFood();}
-function removeFood(id){const k=todayK();if(!S.foods[k])return;S.foods[k]=S.foods[k].filter(f=>f.id!==id);save();renderFood();}
 
+async function confirmFood(){
+  if(!S.pending)return;
+  const k=todayK();
+  if(!S.foods[k])S.foods[k]=[];
+  S.foods[k].push(S.pending);
+  save();
+  closeFoodModal();
+  renderFood();
+  await sheetPost({sheet:'Comidas',action:'append',row:[
+    k,S.pending.moment,S.pending.name,S.pending.cal,S.pending.prot,S.pending.carb,S.pending.fat,S.pending.id
+  ]});
+}
+
+async function removeFood(id){
+  const k=todayK();
+  if(!S.foods[k])return;
+  S.foods[k]=S.foods[k].filter(f=>f.id!==id);
+  save();renderFood();
+  await sheetPost({sheet:'Comidas',action:'delete',id});
+}
+
+// ═══════════ CIGARETTES ═══════════
 function cigToday(){return new Date().toISOString().split('T')[0];}
-function weekDates(){const t=new Date(),dow=t.getDay(),mon=new Date(t);mon.setDate(t.getDate()-(dow===0?6:dow-1));return Array.from({length:7},(_,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);return d.toISOString().split('T')[0];});}
-function addCig(d){const k=cigToday();S.cigs[k]=Math.max(0,(S.cigs[k]||0)+d);save();renderCigs();}
+function weekDates(){
+  const t=new Date(),dow=t.getDay(),mon=new Date(t);
+  mon.setDate(t.getDate()-(dow===0?6:dow-1));
+  return Array.from({length:7},(_,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);return d.toISOString().split('T')[0];});
+}
+
+async function addCig(d){
+  const k=cigToday();
+  S.cigs[k]=Math.max(0,(S.cigs[k]||0)+d);
+  save();renderCigs();
+  syncDot('sync-cig','loading');
+  const ok=await sheetPost({sheet:'Cigarrillos',action:'upsert_day',date:k,row:[k,S.cigs[k]]});
+  syncDot('sync-cig',ok?'ok':'err');
+}
+
 function saveCigGoal(){S.cigGoal=parseInt(document.getElementById('cig-goal').value)||0;save();renderCigs();}
 
 function renderCigs(){
@@ -641,7 +850,8 @@ function renderCigs(){
   document.getElementById('cig-mo').textContent=mo;
   const dayL=['L','M','M','J','V','S','D'],maxW=Math.max(1,...wd.map(d=>S.cigs[d]||0));
   let wh='';
-  wd.forEach((d,i)=>{const n=S.cigs[d]||0,h=Math.round((n/maxW)*52)+3,isT=d===today;
+  wd.forEach((d,i)=>{
+    const n=S.cigs[d]||0,h=Math.round((n/maxW)*52)+3,isT=d===today;
     wh+=`<div class="bar-col"><div class="bar-val" style="color:${isT?'var(--lime)':'var(--gray-300)'}">${n||'·'}</div>
       <div class="bar-fill" style="height:${h}px;background:${isT?'var(--lime)':'var(--gray-600)'}"></div>
       <div class="bar-lbl" style="color:${isT?'var(--lime)':'var(--gray-500)'}">${dayL[i]}</div></div>`;
@@ -649,24 +859,31 @@ function renderCigs(){
   document.getElementById('cig-week-bars').innerHTML=wh;
   if(S.cigGoal>0){
     const pct=Math.min(100,Math.round(wk/S.cigGoal*100)),col=pct>90?'var(--red)':pct>70?'var(--yellow)':'#4ADE80';
-    document.getElementById('cig-goal-bar').innerHTML=`<div class="pbar-wrap"><div class="pbar" style="background:${col};width:${pct}%"></div></div><div class="pbar-row"><span>${wk} / ${S.cigGoal} esta semana</span><span style="font-weight:700;color:${col}">${pct}%</span></div>`;
+    document.getElementById('cig-goal-bar').innerHTML=`<div class="pbar-wrap"><div class="pbar" style="background:${col};width:${pct}%"></div></div>
+      <div class="pbar-row"><span>${wk} / ${S.cigGoal} esta semana</span><span style="font-weight:700;color:${col}">${pct}%</span></div>`;
   }
   if(document.getElementById('cig-goal').value===''&&S.cigGoal>0)document.getElementById('cig-goal').value=S.cigGoal;
-  const months=Array.from({length:6},(_,i)=>{const d=new Date();d.setMonth(d.getMonth()-5+i);const mk=d.toISOString().substring(0,7);
-    return{mk,total:Object.entries(S.cigs).filter(([k])=>k.startsWith(mk)).reduce((a,[,v])=>a+v,0),label:d.toLocaleDateString('es-AR',{month:'short'})};});
+  const months=Array.from({length:6},(_,i)=>{
+    const d=new Date();d.setMonth(d.getMonth()-5+i);
+    const mk=d.toISOString().substring(0,7);
+    return{mk,total:Object.entries(S.cigs).filter(([k])=>k.startsWith(mk)).reduce((a,[,v])=>a+v,0),label:d.toLocaleDateString('es-AR',{month:'short'})};
+  });
   const maxM=Math.max(1,...months.map(m=>m.total));
   let mh='',lh='';
-  months.forEach(m=>{const h=Math.round((m.total/maxM)*64)+3,isCur=m.mk===moPfx;
+  months.forEach(m=>{
+    const h=Math.round((m.total/maxM)*64)+3,isCur=m.mk===moPfx;
     mh+=`<div class="bar-col"><div class="bar-val" style="color:${isCur?'var(--lime)':'var(--gray-300)'}">${m.total||'·'}</div>
       <div class="bar-fill" style="height:${h}px;background:${isCur?'var(--lime)':'var(--gray-600)'}"></div>
       <div class="bar-lbl">${m.label}</div></div>`;
     const col=m.total>60?'var(--red)':m.total>30?'var(--yellow)':m.total>0?'#4ADE80':'var(--gray-500)';
-    lh+=`<div class="info-row"><span class="info-lbl" style="font-weight:${isCur?600:400}">${m.label} ${m.mk.substring(0,4)}${isCur?' (actual)':''}</span><span class="info-val" style="color:${col}">${m.total} cig</span></div>`;
+    lh+=`<div class="info-row"><span class="info-lbl" style="font-weight:${isCur?600:400}">${m.label} ${m.mk.substring(0,4)}${isCur?' (actual)':''}</span>
+      <span class="info-val" style="color:${col}">${m.total} cig</span></div>`;
   });
   document.getElementById('cig-month-bars').innerHTML=mh;
   document.getElementById('cig-month-list').innerHTML=lh;
 }
 
+// ═══════════ STATS ═══════════
 function renderStats(){
   document.getElementById('s-weight').textContent=S.weight;
   document.getElementById('s-pliegues').textContent=S.pliegues;
@@ -674,11 +891,11 @@ function renderStats(){
   document.getElementById('pl-pbar').style.width=prog+'%';
   document.getElementById('pl-pct').textContent=prog+'%';
   const wd=weekDates();
-  document.getElementById('s-sessions').textContent=S.sessions.filter(s=>wd.includes(s.date.split('T')[0])).length;
+  document.getElementById('s-sess').textContent=S.sessions.filter(s=>wd.includes(s.date.split('T')[0])).length;
   const wd2=wd.filter(d=>S.foods[d]&&S.foods[d].length>0);
   if(wd2.length>=1){
     const avg=Math.round(wd2.reduce((a,d)=>a+S.foods[d].reduce((x,f)=>x+f.cal,0),0)/wd2.length);
-    document.getElementById('s-avg-cal').textContent=avg;
+    document.getElementById('s-kcal').textContent=avg;
     const def=2300-avg;
     if(def>0){
       const months=Math.max(1,Math.round(21/(def/7700/30)));
@@ -693,11 +910,15 @@ function renderStats(){
       document.getElementById('proj-content').innerHTML=`<div class="note note-yellow"><span class="note-icon">⚠️</span><span>Sin déficit calórico. Ajustá la alimentación para ver la proyección.</span></div>`;
     }
   }
-  document.getElementById('s-cigs-wk').textContent=weekDates().reduce((a,d)=>a+(S.cigs[d]||0),0);
+  document.getElementById('s-cigs').textContent=weekDates().reduce((a,d)=>a+(S.cigs[d]||0),0);
   const dn={lun:'Lunes',mar:'Martes',mie:'Miércoles',jue:'Jueves',vie:'Viernes',sab:'Sábado'};
   let h='';
-  S.sessions.slice(0,8).forEach(s=>{
-    h+=`<div class="info-row"><div><div class="info-val" style="font-size:.82rem">${dn[s.day]||s.day}</div><div style="font-size:.6rem;color:var(--gray-500);margin-top:2px">${new Date(s.date).toLocaleDateString('es-AR')}</div></div>
+  S.sessions.slice(0,10).forEach(s=>{
+    h+=`<div class="info-row">
+      <div>
+        <div class="info-val" style="font-size:.82rem">${dn[s.day]||s.day} <span style="font-size:.62rem;color:var(--gray-500)">Sem ${s.week||'?'}</span></div>
+        <div style="font-size:.6rem;color:var(--gray-500);margin-top:2px">${new Date(s.date).toLocaleDateString('es-AR')}</div>
+      </div>
       <div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end">
         ${s.fc?`<span class="chip chip-red">FC ${s.fc}</span>`:''}
         ${s.cal?`<span class="chip chip-lime">${s.cal} kcal</span>`:''}
@@ -707,17 +928,33 @@ function renderStats(){
   document.getElementById('sess-hist').innerHTML=h||`<div style="text-align:center;color:var(--gray-500);font-size:.75rem;padding:14px 0">Sin sesiones registradas aún</div>`;
 }
 
-function updateBody(){
-  const w=parseFloat(document.getElementById('up-weight').value),p=parseFloat(document.getElementById('up-pliegues').value);
+async function updateBody(){
+  const w=parseFloat(document.getElementById('up-w').value);
+  const p=parseFloat(document.getElementById('up-p').value);
   if(w>0)S.weight=w;if(p>0)S.pliegues=p;
-  save();renderStats();document.getElementById('up-weight').value='';document.getElementById('up-pliegues').value='';
-  const btn=event.target;btn.textContent='✓ Guardado';btn.style.background='var(--green-mid)';btn.style.color='#fff';btn.style.border='none';
-  setTimeout(()=>{btn.textContent='Guardar medidas';btn.style.background='';btn.style.color='';btn.style.border='';},2000);
+  save();renderStats();
+  document.getElementById('up-w').value='';document.getElementById('up-p').value='';
+  const btn=event.target;btn.textContent='Guardando...';btn.style.opacity='.7';
+  const ok=await sheetPost({sheet:'Medidas',action:'append',row:[
+    new Date().toISOString().split('T')[0],S.weight,S.pliegues
+  ]});
+  btn.textContent=ok?'✓ Guardado':'✓ Local';btn.style.opacity='1';
+  btn.style.background=ok?'var(--green)':'var(--yellow)';btn.style.color='#fff';btn.style.border='none';
+  setTimeout(()=>{btn.textContent='Guardar medidas';btn.style.background='';btn.style.color='';btn.style.border='';},2500);
 }
 
+// ═══════════ INIT ═══════════
 load();
 const todayDay=['dom','lun','mar','mie','jue','vie','sab'][new Date().getDay()];
-if(PLAN[todayDay]){S.day=todayDay;document.querySelectorAll('.pill-tab').forEach(b=>{if(b.dataset.day===todayDay){document.querySelectorAll('.pill-tab').forEach(x=>x.classList.remove('act'));b.classList.add('act');}});}
+if(['lun','mar','mie','jue','vie','sab'].includes(todayDay)){
+  S.day=todayDay;
+  document.querySelectorAll('.pill-tab').forEach(b=>{
+    if(b.dataset.day===todayDay){
+      document.querySelectorAll('.pill-tab').forEach(x=>x.classList.remove('act'));
+      b.classList.add('act');
+    }
+  });
+}
 renderGym(S.day);
 </script>
 </body>
